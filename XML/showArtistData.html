@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Album Data</title>
+  </head>
+  <body>
+    <h2>Album Titles and Artists</h2>
+    <button onclick="loadXMLData()">Load Albums</button>
+
+    <div id="albumList"></div>
+
+    <script>
+      function loadXMLData() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = this.responseXML;
+            var albums = xmlDoc.getElementsByTagName("album");
+            var albumList = "";
+
+            for (var i = 0; i < albums.length; i++) {
+              var title =
+                albums[i].getElementsByTagName("title")[0].childNodes[0]
+                  .nodeValue;
+              var artist =
+                albums[i].getElementsByTagName("artistName")[0].childNodes[0]
+                  .nodeValue;
+
+              albumList +=
+                "<p><strong>Title:</strong> " +
+                title +
+                "<br><strong>Artist:</strong> " +
+                artist +
+                "</p>";
+            }
+
+            document.getElementById("albumList").innerHTML = albumList;
+          }
+        };
+
+        xhttp.open("GET", "artist.xml", true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>

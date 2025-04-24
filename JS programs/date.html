@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Date and Time</title>
+  </head>
+  <body>
+    <h1>Current Date and Time</h1>
+    <p id="datetime"></p>
+
+    <script>
+      function displayDateTime() {
+        const now = new Date();
+        const formatted = now.toLocaleString(); // e.g., "4/24/2025, 11:15:00 AM"
+        document.getElementById("datetime").textContent = formatted;
+      }
+
+      displayDateTime(); // Show on load
+      setInterval(displayDateTime, 1000); // Update every second
+    </script>
+  </body>
+</html>

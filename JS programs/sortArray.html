@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sort Array</title>
+  </head>
+  <body>
+    <h1>Array Sorter</h1>
+
+    <input
+      type="text"
+      id="arrayInput"
+      placeholder="Enter numbers separated by commas"
+    />
+    <button onclick="sortArray()">Sort</button>
+
+    <p id="result"></p>
+
+    <script>
+      function sortArray() {
+        const input = document.getElementById("arrayInput").value;
+        const array = input
+          .split(",")
+          .map((num) => parseFloat(num.trim()))
+          .filter((num) => !isNaN(num)); // Clean up invalid entries
+
+        const sorted = array.sort((a, b) => a - b); // Ascending sort
+
+        document.getElementById(
+          "result"
+        ).textContent = `Sorted Array: [ ${sorted.join(", ")} ]`;
+      }
+    </script>
+  </body>
+</html>

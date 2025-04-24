@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<musicCollection>
+    <album>
+        <title>Album Title 1</title>
+        <artistName>Artist 1</artistName>
+        <country>USA</country>
+        <columbia>true</columbia>
+        <price>19.99</price>
+        <year>2023</year>
+    </album>
+    
+    <album>
+        <title>Album Title 2</title>
+        <artistName>Artist 2</artistName>
+        <country>Canada</country>
+        <columbia>false</columbia>
+        <price>15.99</price>
+        <year>2022</year>
+    </album>
+    
+    <album>
+        <title>Album Title 3</title>
+        <artistName>Artist 3</artistName>
+        <country>UK</country>
+        <columbia>true</columbia>
+        <price>22.50</price>
+        <year>2021</year>
+    </album>
+    
+    <album>
+        <title>Album Title 4</title>
+        <artistName>Artist 4</artistName>
+        <country>Australia</country>
+        <columbia>false</columbia>
+        <price>18.75</price>
+        <year>2020</year>
+    </album>
+</musicCollection>

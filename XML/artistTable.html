@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display XML Data in Table</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Album Data</h2>
+    <button onclick="loadXMLData()">Load Album Data</button>
+
+    <table id="albumTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Country</th>
+          <th>Columbia</th>
+          <th>Price</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      function loadXMLData() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = this.responseXML;
+            var albums = xmlDoc.getElementsByTagName("album");
+            var tableBody = document
+              .getElementById("albumTable")
+              .getElementsByTagName("tbody")[0];
+
+            tableBody.innerHTML = "";
+
+            for (var i = 0; i < albums.length; i++) {
+              var title =
+                albums[i].getElementsByTagName("title")[0].childNodes[0]
+                  .nodeValue;
+              var artist =
+                albums[i].getElementsByTagName("artistName")[0].childNodes[0]
+                  .nodeValue;
+              var country =
+                albums[i].getElementsByTagName("country")[0].childNodes[0]
+                  .nodeValue;
+              var columbia =
+                albums[i].getElementsByTagName("columbia")[0].childNodes[0]
+                  .nodeValue;
+              var price =
+                albums[i].getElementsByTagName("price")[0].childNodes[0]
+                  .nodeValue;
+              var year =
+                albums[i].getElementsByTagName("year")[0].childNodes[0]
+                  .nodeValue;
+
+              var row = tableBody.insertRow();
+
+              row.insertCell(0).innerHTML = title;
+              row.insertCell(1).innerHTML = artist;
+              row.insertCell(2).innerHTML = country;
+              row.insertCell(3).innerHTML = columbia;
+              row.insertCell(4).innerHTML = price;
+              row.insertCell(5).innerHTML = year;
+            }
+          }
+        };
+
+        xhttp.open("GET", "artist.xml", true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
