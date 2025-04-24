@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $string1 = $_POST["string1"];
     $string2 = $_POST["string2"];
 
-    $concatenatedString = $string1 . " " . $string2; // Concatenate with a space in between
+    $concatenatedString = $string1 . " " . $string2; 
 
     echo "<h3>Concatenated String: $concatenatedString</h3>";
 }

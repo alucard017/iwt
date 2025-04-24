@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $wordToReplace = $_POST["wordToReplace"];
     $replacementWord = $_POST["replacementWord"];
 
-    // Replace the word in the original string
+  
     $modifiedString = str_replace($wordToReplace, $replacementWord, $originalString);
 
     echo "<h3>Modified String: $modifiedString</h3>";

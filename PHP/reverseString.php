@@ -18,7 +18,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $str = $_POST["text"];
 
-    $reversed = strrev($str);  // PHP function to reverse the string
+    $reversed = strrev($str);  
 
     echo "<h3>Reversed string: $reversed</h3>";
 }

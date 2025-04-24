@@ -19,10 +19,9 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input = $_POST["arrayInput"];
     
-    // Convert input string to an array of numbers
+
     $array = array_map('intval', explode(",", $input));
-    
-    // Sort the array in ascending order
+   
     sort($array);
     
     echo "<h3>Sorted Array:</h3>";

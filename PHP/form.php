@@ -8,7 +8,7 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form inputs safely
+    
     $name = htmlspecialchars($_POST["name"]);
     $email = htmlspecialchars($_POST["email"]);
 

@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $num2 = $_POST["num2"];
     $num3 = $_POST["num3"];
 
-    // Find the largest of the three numbers
+    
     $largest = max($num1, $num2, $num3);
 
     echo "<h3>The largest number is: $largest</h3>";
